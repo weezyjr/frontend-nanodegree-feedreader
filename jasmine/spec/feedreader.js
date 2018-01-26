@@ -76,7 +76,7 @@ $(function () {
 			//hide the menu
 			menuIcon.trigger('click');
 			expect(body.hasClass('menu-hidden')).toBe(true);
-		})
+		});
 	});
 
 	describe('Initial entries', () => {
@@ -111,20 +111,19 @@ $(function () {
 				tempFeed = $('.feed').html();
 				loadFeed(1, () => {
 					done();
-				})
+				});
 			});
 		});
 
 		//load the initial feed again after testing
-		afterEach(()=>{
+		afterEach(() => {
 			loadFeed(0);
 		});
 
 		it('should change the content when a new feed is loaded', (done) => {
 			expect($('.feed').html()).not.toBe(tempFeed);
 			done();
-		})
-
+		});
 	});
 
 }());
